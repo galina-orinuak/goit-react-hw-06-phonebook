@@ -1,0 +1,31 @@
+.galleryMovies {
+width: 2000px;
+display: flex;
+
+flex-wrap: wrap;
+gap: 10px;
+align-content: space-between;
+list-style: none;
+    }
+
+.moviesItem {
+
+display: flex;
+text-align: center;
+font-size: 20px;
+font-weight: inherit;
+}
+
+.moviesImg {
+    border-radius:  2% ;
+    height: 700px;
+    width: 200;
+}
+
+.moviesName {
+    text-decoration: none;
+     color: black;
+font-weight: 400;
+
+
+}
