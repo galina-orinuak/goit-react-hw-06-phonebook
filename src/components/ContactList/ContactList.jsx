@@ -1,8 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import styles from './ContactList.module.css';
 import { RiDeleteBin6Line } from 'react-icons/ri';
-import { deleteContact } from 'components/redux/ContactsSlice';
-
+import { deleteContact } from 'redux/contactsSlice';
 
 export const ContactItem = ({ contact}) => {
   const dispatch = useDispatch();
@@ -21,7 +20,11 @@ export const ContactItem = ({ contact}) => {
 };
 
 export const ContactList = () => {
+
   const contacts = useSelector(state => state.contacts);
+  console.log(contacts);
+
+  
   const searchContacts = useSelector(state => state.filter);
 
   const filterContacts = contacts.filter(contact =>
@@ -33,10 +36,34 @@ export const ContactList = () => {
       <h2>Contacts</h2>
       <ul className={styles.contactList}>
         {filterContacts.map(contact => (
-          
+
           <ContactItem key={contact.id} contact={contact} />
         ))}
       </ul>
     </>
   );
 };
+
+
+
+// export const ContactList = () => {
+//   const dispatch = useDispatch();
+//   const contacts = useSelector(state => state.contacts);
+//   const searchContacts = useSelector(state => state.filter);
+
+//   const filterContacts = contacts.filter(contact =>
+//     contact.name.toLowerCase().includes(searchContacts.toLowerCase().trim())
+//   );
+
+//   return (
+//     <>
+//       <h2>Contacts</h2>
+//       <ul className={styles.contactList}>
+//         {filterContacts.map(contact => (
+
+//           <ContactItem key={contact.id} contact={contact} />
+//         ))}
+//       </ul>
+//     </>
+//   );
+// };
