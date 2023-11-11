@@ -21,10 +21,8 @@ export const ContactItem = ({ contact}) => {
 
 export const ContactList = () => {
 
-  const contacts = useSelector(state => state.contacts);
-  console.log(contacts);
-
-  
+  const contacts = useSelector(state => state.contacts.contacts);
+ 
   const searchContacts = useSelector(state => state.filter);
 
   const filterContacts = contacts.filter(contact =>
